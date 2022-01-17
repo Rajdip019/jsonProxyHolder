@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Comments from "../../components/Comments";
+import { template } from "../../../helpers/template";
 
 const Post = ({ postData, postComments }) => {
   return (
@@ -33,9 +34,10 @@ const Post = ({ postData, postComments }) => {
 
 export async function getServerSideProps({ params: { post } }) {
   try {
-    const res1 = await fetch(`http://localhost:3000/api/${post}`);
+    const {templateString} = template 
+    const res1 = await fetch(`${templateString}/api/${post}`);
     const data = await res1.json();
-    const res2 = await fetch(`http://localhost:3000/api/${post}/comments`);
+    const res2 = await fetch(`${templateString}/api/${post}/comments`);
     const data2 = await res2.json();
     return {
       props: {

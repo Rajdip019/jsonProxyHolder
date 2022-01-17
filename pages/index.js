@@ -35,7 +35,7 @@ const Index = ({data}) => {
 
 export async function getStaticProps(){
   try{
-    const {templateString} = template
+    const {templateString} = template;
     const res = await fetch(`${templateString}/api/allData`);
     const data = await res.json();
     return {
