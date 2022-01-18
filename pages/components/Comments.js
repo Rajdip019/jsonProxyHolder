@@ -7,9 +7,9 @@ const Comments = ({name, body, email}) => {
             <img src={`https://avatars.dicebear.com/api/bottts/${name}.svg`} alt="" className='w-16 mr-5 p-3 bg-blue-400 rounded-full mb-5 md:mb-auto' />
         </div>
         <div>
-            <h3 className='font-semibold my-1'>Name: <span className='font-medium'>{name}</span> </h3>
-            <p className='font-semibold my-1'>Email : <span className=' font-normal'>{email}</span></p>
-            <p className='font-semibold my-2'> <span className=' font-normal'>{body}</span></p>
+            <h3 className='font-semibold my-1 dark:text-slate-200 transition-all'>Name: <span className='font-medium'>{name}</span> </h3>
+            <p className='font-semibold my-1 dark:text-slate-200 transition-all' >Email : <span className=' font-normal'>{email}</span></p>
+            <p className='font-semibold my-2 dark:text-slate-400 transition-all'> <span className=' font-normal'>{body}</span></p>
         </div>
         </div>
     )

@@ -13,7 +13,7 @@ const Document = () => {
             content="width=device-width, initial-scale=1.0"
           />
           <link rel="shortcut icon" href="/icon.svg" type="image/x-icon" />
-          <title>JSON Proxy Holder</title>
+          <title>Hello</title>
         </head>
       </html>
     </Head>

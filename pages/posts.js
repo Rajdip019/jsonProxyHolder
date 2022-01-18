@@ -12,11 +12,11 @@ const AllPosts = ({data}) => {
   console.log(router.query)
 
   return (
-    <div>
+    <div className='dark:bg-slate-900 transition-all'>
       <Document/>
       <Navbar />
       <div className='text-center my-32'>
-        <h3 className='text-2xl font-bold'>Here are all the Posts! 👇</h3>
+        <h3 className='text-2xl font-bold dark:text-slate-100 transition-all'>Here are all the Posts! 👇</h3>
       </div>
       <div className="flex flex-wrap -m-4 lg:w-10/12 w-11/12 mx-auto mt-10">
       {data.map((post) => {

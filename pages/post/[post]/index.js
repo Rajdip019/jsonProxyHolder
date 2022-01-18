@@ -6,14 +6,14 @@ import { template } from "../../../helpers/template";
 
 const Post = ({ postData, postComments }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen dark:bg-slate-900 transition-all">
       <Navbar />
 
       <div className="lg:w-10/12 w-11/12 text-center my-36 mx-auto">
-        <h1 className="font-semibold text-3xl">{postData.title}</h1>
-        <p className="text-xl w-6/12 mx-auto my-10">{postData.body}</p>
-        <p className="ml-5 text-slate-400">by User - {postData.userId} </p>
-        <h1 className="font-bold my-10 text-xl">Commnets 👇</h1>
+        <h1 className="font-semibold text-3xl dark:text-slate-100 transition-all">{postData.title}</h1>
+        <p className="text-xl w-6/12 mx-auto my-10 dark:text-slate-300 transition-all">{postData.body}</p>
+        <p className="ml-5 text-slate-400 dark:text-slate-400 transition-all">by User - {postData.userId} </p>
+        <h1 className="font-bold my-10 text-xl dark:text-slate-100 transition-all">Commnets 👇</h1>
         <div className="mt-16">
           {postComments.map((comment) => {
             return (

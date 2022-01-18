@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Theme from "./Theme";
 
 const Navbar = () => {
   const [searchInput, setSearchInput] = useState();
@@ -15,10 +16,10 @@ const Navbar = () => {
   };
 
   return (
-    <header class="text-gray-600 body-font">
+    <header class="text-gray-600 body-font dark:bg-slate-800 transition-all dark:text-gray-100 ">
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer dark:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -32,19 +33,19 @@ const Navbar = () => {
         </Link>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <Link href="/">
-            <a class="mr-6 hover:text-gray-900 hover:font-semibold hover:underline cursor-pointer transition-all">
+            <a class="mr-6 hover:text-gray-900 hover:font-semibold hover:underline cursor-pointer transition-all dark:hover:text-white">
               Home
             </a>
           </Link>
           <Link href="/posts">
-            <a class="mr-6 hover:text-gray-900 hover:font-semibold hover:underline cursor-pointer transition-all">
+            <a class="mr-6 hover:text-gray-900 hover:font-semibold hover:underline cursor-pointer transition-all dark:hover:text-white">
               All Posts
             </a>
           </Link>
         </nav>
         <input
           type="text"
-          className="bg-gray-100 rounded-l w-64 h-8 pl-3 focus:border-0 focus:ring-0"
+          className="bg-gray-100 rounded-l w-64 h-8 pl-3 focus:border-0 focus:ring-0 dark:bg-gray-900 transition-all dark:text-gray-50"
           placeholder="Enter UserId (1-10)"
           onKeyPress={(event) => {
             event.key === "Enter" && document.getElementById("myBtn").click();
@@ -59,7 +60,7 @@ const Navbar = () => {
           onClick={() => {
             handleSearch();
           }}
-          className="mr-8 h-8 bg-gray-100 rounded-r pr-2"
+          className="mr-8 h-8 bg-gray-100 rounded-r pr-2 dark:bg-gray-900 transition-all dark:text-gray-50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +77,9 @@ const Navbar = () => {
             />
           </svg>
         </button>
+
         <a href="https://github.com/Rajdip019/jsonProxyHolder.git" target="_blank">
-        <button class="inline-flex font-semibold items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+        <button class="inline-flex font-semibold items-center bg-gray-100 dark:bg-slate-600 transition-all dark:text-gray-50 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -103,6 +105,7 @@ const Navbar = () => {
           </svg>
         </button>
         </a>
+        <Theme />
       </div>
     </header>
   );
